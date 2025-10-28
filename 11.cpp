@@ -7,7 +7,7 @@ int main()
     int b = 0;
     char c;
     int d;
-    char e;
+    int e;
     setlocale(0, "");
     cout << "[ + ] Программа - “Геометрические фигуры”" << endl;
     cout << "[ 1 ] Линия" << endl;
@@ -33,6 +33,7 @@ int main()
                 cout << c;
 
             }
+            break;
         }
         case 2:
         {
@@ -45,11 +46,12 @@ int main()
                 cout << c << endl;
 
             }
+            break;
+
         }
         default:
         {
             cout << "Неправильно " << endl;
-            return;
         }
 
         }
@@ -58,4 +60,3 @@ int main()
     }
     }
 }
-
