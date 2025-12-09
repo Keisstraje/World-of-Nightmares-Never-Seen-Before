@@ -8,19 +8,17 @@ int main() {
     setlocale(0, "");
     const int max{ 7 };
     int s = 0;
-    int v;
+    int v = 0;
     int o[max];
-
-
-
-
-
+    int z = 1;
 
     while (s != 7) {
         cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
         cin >> o[s];
         s++;
     }
+    int n = sizeof(o) / sizeof(o[0]);
+
     cout << "[+] Настройки массива:" << endl;
     cout << "[1] Сортировка по возрастанию" << endl;
     cout << "[2] Сортировка по убыванию" << endl;
@@ -30,56 +28,63 @@ int main() {
     cout << "[6] Обнулить массив" << endl;
     cout << "[9] Задать новые значения массиву" << endl;
     cout << "[+] Ввод:";
+
+
     cin >> v;
-    switch (v) {
-    case 1: {
-        int n = sizeof(o) / sizeof(o[0]);
+    switch(v)
+    {
+        case 1: 
+            sort(o, o + n);
+            for (int x : o) {
+                cout << x << " ";
+            }
+            cout << endl;
+            break;
 
-        sort(o, o + n);
+        case 2: 
+            
+            sort(o, o + n, greater<int>());
 
-        for (int x : o) {
-            cout << x << " "; 
-        }
-        cout << std::endl;
+            for (int x : o) {
+                cout << x << " ";
+            }
+            cout << endl;
+            break;
+        
+        case 3: 
+            for (int i = 0; i < max; ++i)
+            {
+                
+                cout << o[i] << "\t";
+                cout << o;
+            }
+            break;
+        case 4: 
+            break;
+        case 5: 
+            break;
+        case 6: 
+            break;
+        case 9: {
+                  s = 0;
+                  while (s != 7) {
+                      cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
+                      cin >> o[s];
+                      s++;
+                  }
+              }
+            break;
+        default: 
+            cout << "not vjerno" << endl;
+            break;
+        
     }
-    case 2: {
-        int n = sizeof(o) / sizeof(o[0]);
 
-        sort(o, o + n, greater<int>());
+    /* for (int i = 0; i < max; ++i)
+         {
+             cout << o[i] << "\t";
+         }
+     cout << "z" << "\t";*/
+    return 0;
 
-        for (int x : o) {
-            cout << x << " ";
-        }
-        cout << endl;
-    }
-    case 3: {
-        for (int i = 0; i < max; ++i)
-        {
-            o[(i-1)]* o[i];
-            cout << o[i] << "\t";
-            cout << o;
-        }
-    }
-    case 4: {
-    }
-    case 5: {
-    }
-    case 6: {
-    }
-    case 9: {
-        s = 0;
-        while (s != 7) {
-            cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
-            cin >> o[s];
-            s++;
-        }
-
-
-    }
-          for (int i = 0; i < max; ++i)
-          {
-              cout << o[i] << "\t";
-          }
-          return 0;
-    }
 }
