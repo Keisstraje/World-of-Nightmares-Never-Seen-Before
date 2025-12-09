@@ -11,6 +11,7 @@ int main() {
     int v = 0;
     int o[max];
     int z = 1;
+    int g = 0;
 
     while (s != 7) {
         cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
@@ -31,60 +32,74 @@ int main() {
 
 
     cin >> v;
-    switch(v)
+    switch (v)
     {
-        case 1: 
-            sort(o, o + n);
-            for (int x : o) {
-                cout << x << " ";
-            }
-            cout << endl;
-            break;
+    case 1:
+        sort(o, o + n);
+        for (int x : o) {
+            cout << x << " ";
+        }
+        cout << endl;
+        break;
 
-        case 2: 
+    case 2:
+
+        sort(o, o + n, greater<int>());
+
+        for (int x : o) {
+            cout << x << " ";
+        }
+        cout << endl;
+        break;
+
+    case 3:
+        for (int i = 0; i < max; ++i)
+        {
+            z = (z * o[i]);
             
-            sort(o, o + n, greater<int>());
-
-            for (int x : o) {
-                cout << x << " ";
-            }
-            cout << endl;
-            break;
-        
-        case 3: 
-            for (int i = 0; i < max; ++i)
-            {
-                
-                cout << o[i] << "\t";
-                cout << o;
-            }
-            break;
-        case 4: 
-            break;
-        case 5: 
-            break;
-        case 6: 
-            break;
-        case 9: {
-                  s = 0;
-                  while (s != 7) {
-                      cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
-                      cin >> o[s];
-                      s++;
-                  }
-              }
-            break;
-        default: 
-            cout << "not vjerno" << endl;
-            break;
-        
+            
+        }
+        cout << z;
+        break;
+    case 4:
+        for (int i = 0; i < max; ++i)
+        {
+            g = (g + o[i]);
+        }
+        cout << g;
+        break;
+    case 5:
+        int r;
+        cout << "Vvjedi Deljitjel"<<endl;
+        cin >> r;
+        for (int i = 0; i < max; ++i)
+        {
+            o[i] = (o[i] / r);
+        }
+        for (int i = 0; i < max; ++i)
+        {
+            cout << o[i] << "\t";
+        }
+        break;
+    case 6:
+        for (int i = 0; i < max; ++i) {
+            o[i] = 0;
+        }
+        break;
+    case 9: {
+        s = 0;
+        while (s != 7) {
+            cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
+            cin >> o[s];
+            s++;
+        }
     }
+          break;
+    default:
+        cout << "not vjerno" << endl;
+        break;
 
-    /* for (int i = 0; i < max; ++i)
-         {
-             cout << o[i] << "\t";
-         }
-     cout << "z" << "\t";*/
+    }
     return 0;
 
 }
