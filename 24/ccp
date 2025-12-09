@@ -1,0 +1,85 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+    const int max{ 7 };
+    int s = 0;
+    int v;
+    int o[max];
+
+
+
+
+
+
+    while (s != 7) {
+        cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
+        cin >> o[s];
+        s++;
+    }
+    cout << "[+] Настройки массива:" << endl;
+    cout << "[1] Сортировка по возрастанию" << endl;
+    cout << "[2] Сортировка по убыванию" << endl;
+    cout << "[3] Перемножить массив" << endl;
+    cout << "[4] Сложить массив" << endl;
+    cout << "[5] Разделить массив" << endl;
+    cout << "[6] Обнулить массив" << endl;
+    cout << "[9] Задать новые значения массиву" << endl;
+    cout << "[+] Ввод:";
+    cin >> v;
+    switch (v) {
+    case 1: {
+        int n = sizeof(o) / sizeof(o[0]);
+
+        sort(o, o + n);
+
+        for (int x : o) {
+            cout << x << " "; 
+        }
+        cout << std::endl;
+    }
+    case 2: {
+        int n = sizeof(o) / sizeof(o[0]);
+
+        sort(o, o + n, greater<int>());
+
+        for (int x : o) {
+            cout << x << " ";
+        }
+        cout << endl;
+    }
+    case 3: {
+        for (int i = 0; i < max; ++i)
+        {
+            o[(i-1)]* o[i];
+            cout << o[i] << "\t";
+            cout << o;
+        }
+    }
+    case 4: {
+    }
+    case 5: {
+    }
+    case 6: {
+    }
+    case 9: {
+        s = 0;
+        while (s != 7) {
+            cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
+            cin >> o[s];
+            s++;
+        }
+
+
+    }
+          for (int i = 0; i < max; ++i)
+          {
+              cout << o[i] << "\t";
+          }
+          return 0;
+    }
+}
