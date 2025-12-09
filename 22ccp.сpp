@@ -1,90 +1,172 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
-
+#include <Windows.h>
 using namespace std;
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    int NumT;
+    int NumN;
+    int swt;
 
-int main() {
-    setlocale(0, "");
-    const int max{ 7 };
-    int s = 0;
-    int v = 0;
-    int o[max];
-    int z = 1;
-
-    while (s != 7) {
-        cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
-        cin >> o[s];
-        s++;
+    const int max{ 10 };
+    cout << "1 INT,2 SHORT,3 LONG,4 FLOAT,5 DOUBLE,6 CHAR,7 BOOL,8 STRING" << endl;
+    cout<< "Ваш Выбор: " << endl;
+    cin >> swt;
+    switch (swt) {
+    case 1: {
+        int numbers[max];
+        int i{};
+        cout << "Введи инт" << endl;
+        while (i < max)
+        {
+            cin >> numbers[i];
+            i++;
+        }
+        for (i = 0; i < max; ++i)
+        {
+            cout << numbers[i] << "\t";
+        }
+        cout << endl;
+        break;
     }
-    int n = sizeof(o) / sizeof(o[0]);
 
-    cout << "[+] Настройки массива:" << endl;
-    cout << "[1] Сортировка по возрастанию" << endl;
-    cout << "[2] Сортировка по убыванию" << endl;
-    cout << "[3] Перемножить массив" << endl;
-    cout << "[4] Сложить массив" << endl;
-    cout << "[5] Разделить массив" << endl;
-    cout << "[6] Обнулить массив" << endl;
-    cout << "[9] Задать новые значения массиву" << endl;
-    cout << "[+] Ввод:";
+    case 2: {
+        short numbers[max];
+        int i{};
+        cout << "Введи короткий" << endl;
+        while (i < max)
+        {
+            cin >> numbers[i];
+            i++;
+        }
+        for (i = 0; i < max; ++i)
+        {
+            cout << numbers[i] << "\t";
+        }
+        cout << endl;
+        break;
+    }
 
-
-    cin >> v;
-    switch(v)
+    case 3:
     {
-        case 1: 
-            sort(o, o + n);
-            for (int x : o) {
-                cout << x << " ";
-            }
-            cout << endl;
-            break;
-
-        case 2: 
-            
-            sort(o, o + n, greater<int>());
-
-            for (int x : o) {
-                cout << x << " ";
-            }
-            cout << endl;
-            break;
-        
-        case 3: 
-            for (int i = 0; i < max; ++i)
-            {
-                
-                cout << o[i] << "\t";
-                cout << o;
-            }
-            break;
-        case 4: 
-            break;
-        case 5: 
-            break;
-        case 6: 
-            break;
-        case 9: {
-                  s = 0;
-                  while (s != 7) {
-                      cout << endl << "[ + ] Инициализация | ячейка  " << s << ": ";
-                      cin >> o[s];
-                      s++;
-                  }
-              }
-            break;
-        default: 
-            cout << "not vjerno" << endl;
-            break;
-        
+        long numbers[max];
+        int i{};
+        cout << "Введи длинный" << endl;
+        while (i < max)
+        {
+            cin >> numbers[i];
+            i++;
+        }
+        for (i = 0; i < max; ++i)
+        {
+            cout << numbers[i] << "\t";
+        }
+        cout << endl;
+        break;
     }
 
-    /* for (int i = 0; i < max; ++i)
-         {
-             cout << o[i] << "\t";
-         }
-     cout << "z" << "\t";*/
-    return 0;
+    case 4:
+    {
+        float numbers[max];
+        int i{};
+        cout << "Введи флот" << endl;
+        while (i < max)
+        {
+            cin >> numbers[i];
+            i++;
+        }
+        for (i = 0; i < max; ++i)
+        {
+            cout << numbers[i] << "\t";
+        }
+        cout << endl;
+        break;
+    }
+
+    case 5:
+    {
+        double numbers[max];
+        int i{};
+        cout << "Введи двойной" << endl;
+        while (i < max)
+        {
+            cin >> numbers[i];
+            i++;
+        }
+        for (i = 0; i < max; ++i)
+        {
+            cout << numbers[i] << "\t";
+        }
+        cout << endl;
+        break;
+    }
+
+    case 6:
+    {
+        char numbers[max];
+        setlocale(0, "");
+        int i{};
+        cout << "Введи знак" << endl;
+        while (i < max)
+        {
+            cin >> numbers[i];
+            i++;
+        }
+        for (i = 0; i < max; ++i)
+        {
+            cout << numbers[i] << "\t";
+        }
+        cout << endl;
+        break;
+    }
+
+    case 7:
+    {
+        bool numbers[max];
+        int i{};
+        cout << "Введи труе фалсе" << endl;
+        while (i < max)
+        {
+            cin >> numbers[i];
+            i++;
+        }
+        for (i = 0; i < max; ++i)
+        {
+            cout << numbers[i] << "\t";
+        }
+        cout << endl;
+        break;
+    }
+
+    case 8:
+    {
+        string numbers[max];
+        setlocale(0, "");
+        int i{};
+        cout << "Введи Строки" << endl;
+        while (i < max)
+        {
+            cin >> numbers[i];
+            i++;
+        }
+        for (i = 0; i < max; ++i)
+        {
+            cout << numbers[i] << "\t";
+        }
+        cout << endl;
+        break;
+    }
+
+    default:
+    {
+        cout << "the end of the line!" << endl;
+        break;
+    }
+
+
+    }
+
+
 
 }
