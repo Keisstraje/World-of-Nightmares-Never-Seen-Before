@@ -93,7 +93,7 @@ bool canMove(int x, int y)
 int main()
 {
     hideCursor();
-
+    setlocale(0, "");
     while (true)
     {
         drawMap();
